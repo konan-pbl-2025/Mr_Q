@@ -6,28 +6,33 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
+public class MainClass {
+    public static void main() {
 
-public class StartActivity extends AppCompatActivity {
+        public class StartActivity extends AppCompatActivity {
 
-    @SuppressLint("ResourceType")
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.id.textView);
-
-        Button startButton = findViewById(R.id.activity_start);
-
-        startButton.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("ResourceType")
             @Override
-            public void onClick(View v) {
-                // ボタンがクリックされたらMainActivityに遷移する
-                Intent intent = new Intent(StartActivity.this, MainActivity.class);
-                startActivity(intent);
-                finish();  // StartActivityを終了して戻らないようにする
+            protected void onCreate(Bundle savedInstanceState) {
+                super.onCreate(savedInstanceState);
+                setContentView(R.id.textView);
+
+                Button startButton = findViewById(R.id.activity_start);
+
+                startButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        // ボタンがクリックされたらMainActivityに遷移する
+                        Intent intent = new Intent(StartActivity.this, MainActivity.class);
+                        startActivity(intent);
+                        finish();  // StartActivityを終了して戻らないようにする
+                    }
+                });
             }
-        });
+        }
     }
 }
+
 
 
 
