@@ -1,0 +1,81 @@
+package com.example.mr_q;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class QuestionStorage {
+    private List<Question> questions;
+
+    // コンストラクタ
+    public QuestionStorage() {
+        questions = new ArrayList<>();
+        // 問題文、選択肢、正解を設定してリストに追加
+        questions.add(new Question(
+                "次の中で最も高い山はどれですか？",
+                new String[]{"富士山", "エベレスト", "キリマンジャロ", "アルプス山脈"},
+                "B"
+        ));
+        questions.add(new Question(
+                "地球の最も深い場所はどこですか？",
+                new String[]{"マリアナ海溝", "グランドキャニオン", "アマゾン川", "ヒマラヤ山脈"},
+                "A"
+        ));
+        questions.add(new Question(
+                "最も長い川はどれですか？",
+                new String[]{"ナイル川", "アマゾン川", "長江", "ミシシッピ川"},
+                "A"
+        ));
+        questions.add(new Question(
+                "日本の首都はどこですか？",
+                new String[]{"大阪", "京都", "東京", "名古屋"},
+                "C"
+        ));
+        questions.add(new Question(
+                "富士山の高さはどれくらいですか？",
+                new String[]{"2,377m", "3,776m", "1,500m", "4,000m"},
+                "B"
+        ));
+        questions.add(new Question(
+                "アメリカの最も大きな州はどれですか？",
+                new String[]{"カリフォルニア", "テキサス", "アラスカ", "ニューヨーク"},
+                "C"
+        ));
+        questions.add(new Question(
+                "フランスの首都はどこですか？",
+                new String[]{"パリ", "ロンドン", "ベルリン", "マドリッド"},
+                "A"
+        ));
+        questions.add(new Question(
+                "最も人口が多い国はどこですか？",
+                new String[]{"アメリカ", "インド", "中国", "ロシア"},
+                "C"
+        ));
+        questions.add(new Question(
+                "ピラミッドがある国はどこですか？",
+                new String[]{"エジプト", "メキシコ", "インド", "ギリシャ"},
+                "A"
+        ));
+        questions.add(new Question(
+                "最も広い海はどれですか？",
+                new String[]{"アラビア海", "南シナ海", "太平洋", "インド洋"},
+                "C"
+        ));
+
+        // 問題リストをシャッフルしてランダム順にする
+        Collections.shuffle(questions);
+    }
+
+    // 問題数を取得
+    public int getQuestionCount() {
+        return questions.size();
+    }
+
+    // 指定したインデックスの問題を取得
+    public Question getQuestion(int index) {
+        if (index >= 0 && index < 10) {  // 10問だけを出題
+            return questions.get(index);
+        }
+        return null;
+    }
+}
