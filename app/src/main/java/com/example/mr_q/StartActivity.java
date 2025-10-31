@@ -1,5 +1,6 @@
 package com.example.mr_q;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -8,12 +9,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class StartActivity extends AppCompatActivity {
 
+    @SuppressLint("ResourceType")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_start);
+        setContentView(R.id.textView);
 
-        Button startButton = findViewById(R.id.startButton);
+        Button startButton = findViewById(R.id.activity_start);
 
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
