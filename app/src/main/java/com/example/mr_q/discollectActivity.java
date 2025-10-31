@@ -7,17 +7,17 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class collectActivity extends AppCompatActivity {
+public class discollectActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_collect);
+        setContentView(R.layout.activity_discollect);
 
-        Button nextButton = (Button)findViewById(R.id.collectNext);
+        Button nextButton = (Button)findViewById(R.id.discollectNext);
         nextButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(collectActivity.this,MainActivity.class);
+                Intent intent = new Intent(discollectActivity.this,MainActivity.class);
                 startActivity(intent);
             }
 

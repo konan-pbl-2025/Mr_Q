@@ -13,7 +13,7 @@ public class StartActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.id.textView);
+        setContentView(R.id.collectResult);
 
         Button startButton = findViewById(R.id.activity_start);
 
