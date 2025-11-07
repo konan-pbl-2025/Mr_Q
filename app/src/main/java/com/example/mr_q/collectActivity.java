@@ -20,7 +20,7 @@ public class collectActivity extends AppCompatActivity {
         // MainActivityからインデックスを受け取る
         final int currentIndex = getIntent().getIntExtra("currentIndex", 0);
 
-        textView2.setText(MainActivity.questionStorage.getQuestion(currentIndex).getQuestionExp());
+        textView2.setText(MainActivity.questionStorage.getQuestion(currentIndex - 1).getQuestionExp());
 
 
         nextButton.setOnClickListener(new View.OnClickListener() {
