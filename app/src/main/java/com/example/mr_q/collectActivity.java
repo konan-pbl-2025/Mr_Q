@@ -19,6 +19,7 @@ public class collectActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(collectActivity.this,MainActivity.class);
                 startActivity(intent);
+
             }
 
         });
