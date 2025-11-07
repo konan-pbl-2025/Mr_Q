@@ -56,7 +56,7 @@ public class QuestionStorage {
         questions.add(new Question(
                 "最も人口が多い国はどこですか？",
                 new String[]{"アメリカ", "インド", "中国", "ロシア"},
-                "C",
+                "B",
                 "最も高い山はエベレストです。"
         ));
         questions.add(new Question(
