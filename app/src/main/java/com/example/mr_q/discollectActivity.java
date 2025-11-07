@@ -21,7 +21,7 @@ public class discollectActivity extends AppCompatActivity {
         // MainActivityからインデックスを受け取る
         final int currentIndex = getIntent().getIntExtra("currentIndex", 0);
 
-        discollctEXP.setText(MainActivity.questionStorage.getQuestion(currentIndex).getQuestionExp());
+        discollctEXP.setText(MainActivity.questionStorage.getQuestion(currentIndex - 1).getQuestionExp());
 
         nextButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
