@@ -14,7 +14,7 @@ public class collectActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_collect);
 
-        Button nextButton = (Button)findViewById(R.id.button);
+        Button nextButton = (Button)findViewById(R.id.collect_button);
         nextButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(collectActivity.this,MainActivity.class);
