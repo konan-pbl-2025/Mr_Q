@@ -15,7 +15,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.952"
+        app:layout_constraintVertical_bias="0.861"
         app:srcCompat="@drawable/img_2" />
 
     <TextView
@@ -50,7 +50,7 @@
         android:layout_marginStart="160dp"
         android:layout_marginEnd="163dp"
         android:layout_marginBottom="221dp"
-        android:backgroundTint="#09518A"
+        android:backgroundTint="#0E2FE4"
         android:text="Next"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
