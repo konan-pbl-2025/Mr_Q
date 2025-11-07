@@ -93,27 +93,18 @@ public class MainActivity extends AppCompatActivity {
 
             //正解画面を表示
             Intent intent = new Intent(MainActivity.this, collectActivity.class);
+            intent.putExtra("currentIndex", currentQuestionIndex);  // 現在のインデックスを渡す
             startActivity(intent);
-
-
         } else {
             // 不正解の場合
             Toast.makeText(MainActivity.this, "不正解。正解は「" + currentQuestion.getOptions()[getOptionIndex(correctAnswer)] + "」です。", Toast.LENGTH_LONG).show();
 
             //不正解画面を表示
             Intent intent = new Intent(MainActivity.this, discollectActivity.class);
+            intent.putExtra("currentIndex", currentQuestionIndex);  // 現在のインデックスを渡す
             startActivity(intent);
         }
-
-        // 次の問題に進む
-
-
-
-        currentQuestionIndex++;
-        loadQuestion(currentQuestionIndex);
     }
-
-
 
     // 正解の選択肢のインデックスを取得するメソッド
     private int getOptionIndex(String answer) {
