@@ -22,13 +22,13 @@ public class ResultActivity extends AppCompatActivity {
         setContentView(R.layout.activity_result);
 
         // レイアウトの TextView を取得
-        resultText = findViewById(R.id.resultText);
+        //resultText = findViewById(R.id.resultText);
 
         // Intent からスコアを取得
-        int score = getIntent().getIntExtra("score", 0);
+        //int score = getIntent().getIntExtra("score", 0);
 
         // 結果を表示
-        resultText.setText("ゲーム終了！あなたのスコアは: " + score + "/10");
+        //resultText.setText("ゲーム終了！あなたのスコアは: " + score + "/10");
 
         Button ReturnButton = findViewById(R.id.returnButton);
 
