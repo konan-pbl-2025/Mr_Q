@@ -6,41 +6,35 @@
     android:layout_height="match_parent"
     tools:context=".show_answer_activity">
 
-    <TextView
-        android:id="@+id/Answer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Answer"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView6"
-        app:layout_constraintVertical_bias="0.375" />
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/img"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="50dp" />
-
     <ImageView
         android:id="@+id/imageView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/img_1"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="297dp" />
+        android:layout_width="239dp"
+        android:layout_height="202dp"
+        app:srcCompat="@drawable/Answer_Button"
+        tools:layout_editor_absoluteX="86dp"
+        tools:layout_editor_absoluteY="466dp"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/Your_Answer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Your_Answer"
-        app:layout_constraintBottom_toTopOf="@+id/Answer"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.091" />
+
+    <TextView
+        android:id="@+id/Answer"
+        android:layout_width="53dp"
+        android:layout_height="0dp"
+        android:text="Answer"
+        tools:layout_editor_absoluteX="179dp"
+        tools:layout_editor_absoluteY="143dp"
+        tools:visibility="visible"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
