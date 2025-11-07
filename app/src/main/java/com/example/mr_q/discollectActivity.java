@@ -22,7 +22,7 @@ public class discollectActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // インデックスを1増やして次の問題に進む
                 Intent intent = new Intent(discollectActivity.this, MainActivity.class);
-                intent.putExtra("currentIndex", currentIndex + 1);  // インデックスを1加算
+                intent.putExtra("currentIndex", currentIndex);  // ここでもインデックスをそのまま渡す
                 startActivity(intent);
             }
         });
