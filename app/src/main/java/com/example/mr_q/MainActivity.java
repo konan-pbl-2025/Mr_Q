@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView questionText;
     private Button optionA, optionB, optionC, optionD;
 
-    private QuestionStorage questionStorage = new QuestionStorage(); // 問題リストを管理するインスタンス
+    public static QuestionStorage questionStorage = new QuestionStorage(); // 問題リストを管理するインスタンス
     private int currentQuestionIndex = 0; // 現在の問題インデックス
     private int score = 0; // ユーザーのスコア
 

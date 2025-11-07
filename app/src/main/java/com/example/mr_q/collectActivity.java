@@ -19,8 +19,8 @@ public class collectActivity extends AppCompatActivity {
         TextView textView2 = findViewById(R.id.textView2);
         // MainActivityからインデックスを受け取る
         final int currentIndex = getIntent().getIntExtra("currentIndex", 0);
-        int x = currentIndex;
-        //textView2.setText(getQuestion(currentIndex));
+
+        textView2.setText(MainActivity.questionStorage.getQuestion(currentIndex).getQuestionExp());
 
 
         nextButton.setOnClickListener(new View.OnClickListener() {
