@@ -13,12 +13,11 @@ public class StartActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.id.questionText);
+        setContentView(R.layout.activity_start);
 
-        Button startButton = findViewById(R.id.activity_start);
+        Button StartButton = findViewById(R.id.startButton);
 
-        startButton.setOnClickListener(new View.OnClickListener() {
-            @Override
+        StartButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // ボタンがクリックされたらMainActivityに遷移する
                 Intent intent = new Intent(StartActivity.this, MainActivity.class);
