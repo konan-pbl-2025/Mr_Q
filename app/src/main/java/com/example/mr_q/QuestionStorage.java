@@ -89,6 +89,24 @@ public class QuestionStorage {
                 "A",
                 "漢字表記にすると甲南大学です。"
         ));
+        questions.add(new Question(
+                "世界で最も多い血液型は？",
+                new String[]{"B", "O", "AB", "A"},
+                "B",
+                "最も多いのはO型です。"
+        ));
+        questions.add(new Question(
+                "太陽系で最も大きい惑星は？",
+                new String[]{"火星", "土星", "木星", "地球"},
+                "C",
+                "最も大きいのは木星です。"
+        ));
+        questions.add(new Question(
+                "日本で一番大きい県は？",
+                new String[]{"岐阜県", "岩手県", "広島県", "長野県"},
+                "D",
+                "日本の県の中では長野県が一番大きいです。"
+        ));
 
 
 
