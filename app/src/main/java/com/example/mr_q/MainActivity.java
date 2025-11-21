@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (selectedOption.equals(correctAnswer)) {
             // 正解の場合
-            score++;
+            score = score + 1;
             Toast.makeText(MainActivity.this, "正解！", Toast.LENGTH_SHORT).show();
 
             // 正解画面を表示
