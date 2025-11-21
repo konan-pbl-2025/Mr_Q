@@ -26,9 +26,16 @@ public class discollectActivity extends AppCompatActivity {
         nextButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // インデックスを1増やして次の問題に進む
-                Intent intent = new Intent(discollectActivity.this, MainActivity.class);
-                intent.putExtra("currentIndex", currentIndex);  // ここでもインデックスをそのまま渡す
-                startActivity(intent);
+                if (currentIndex < 10) {
+                    Intent intent = new Intent(discollectActivity.this, MainActivity.class);
+                    intent.putExtra("currentIndex", currentIndex);  // ここではインデックスをそのまま渡す
+                    startActivity(intent);
+                }
+                else if(currentIndex >= 10) {
+                    Intent intent = new Intent(discollectActivity.this, ResultActivity.class);
+                    intent.putExtra("currentIndex", currentIndex);  // ここではインデックスをそのまま渡す
+                    startActivity(intent);
+                }
             }
         });
     }

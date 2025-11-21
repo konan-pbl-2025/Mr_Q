@@ -26,9 +26,16 @@ public class collectActivity extends AppCompatActivity {
         nextButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // インデックスを1増やして次の問題に進む
-                Intent intent = new Intent(collectActivity.this, MainActivity.class);
-                intent.putExtra("currentIndex", currentIndex);  // ここではインデックスをそのまま渡す
-                startActivity(intent);
+                if (currentIndex < 10) {
+                    Intent intent = new Intent(collectActivity.this, MainActivity.class);
+                    intent.putExtra("currentIndex", currentIndex);  // ここではインデックスをそのまま渡す
+                    startActivity(intent);
+                }
+                else if(currentIndex >= 10) {
+                    Intent intent = new Intent(collectActivity.this, ResultActivity.class);
+                    intent.putExtra("currentIndex", currentIndex);  // ここではインデックスをそのまま渡す
+                    startActivity(intent);
+                }
             }
         });
     }
