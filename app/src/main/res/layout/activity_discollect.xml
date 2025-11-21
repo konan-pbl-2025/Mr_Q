@@ -9,13 +9,13 @@
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="141dp"
-        android:layout_height="392dp"
+        android:layout_width="169dp"
+        android:layout_height="166dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.781"
+        app:layout_constraintVertical_bias="0.831"
         app:srcCompat="@drawable/img_2" />
 
     <TextView
@@ -31,45 +31,41 @@
 
     <TextView
         android:id="@+id/discollectEXP"
-        android:layout_width="wrap_content"
-        android:layout_height="45dp"
-        android:layout_marginTop="88dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:text="解説"
         android:textSize="28sp"
-        app:layout_constraintBottom_toTopOf="@+id/discollectNext"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/discollectResult"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/discollectResult" />
 
     <Button
         android:id="@+id/discollectNext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
-        android:layout_marginEnd="163dp"
-        android:layout_marginBottom="221dp"
         android:backgroundTint="#0E2FE4"
         android:text="Next"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/discollectEXP"
+        app:layout_constraintVertical_bias="0.7" />
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="362dp"
-        android:layout_height="411dp"
+        android:layout_width="330dp"
+        android:layout_height="508dp"
         android:alpha="0.3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.061"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.396"
+        app:layout_constraintVertical_bias="0.497"
         app:srcCompat="@drawable/img_1" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
