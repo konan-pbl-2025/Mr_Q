@@ -9,6 +9,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class StartActivity extends AppCompatActivity {
 
+    public static int currentQuestionIndex = 0; // 現在の問題インデックス
+    public static int score = 0; // ユーザーのスコア
+
     @SuppressLint("ResourceType")
     @Override
     protected void onCreate(Bundle savedInstanceState) {

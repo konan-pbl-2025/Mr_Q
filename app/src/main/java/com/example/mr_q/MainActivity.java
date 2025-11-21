@@ -14,8 +14,6 @@ public class MainActivity extends AppCompatActivity {
     private Button optionA, optionB, optionC, optionD;
 
     public static QuestionStorage questionStorage = new QuestionStorage(); // 問題リストを管理するインスタンス
-    private int currentQuestionIndex = 0; // 現在の問題インデックス
-    private int score = 0; // ユーザーのスコア
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // もしIntentにcurrentIndexが含まれていれば、それをセット
-        currentQuestionIndex = getIntent().getIntExtra("currentIndex", currentQuestionIndex);
+        StartActivity.currentQuestionIndex = getIntent().getIntExtra("currentIndex", StartActivity.currentQuestionIndex);
 
         // UI部品の初期化
         questionText = findViewById(R.id.questionText);
@@ -33,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         optionD = findViewById(R.id.optionD);
 
         // 最初の問題を表示
-        loadQuestion(currentQuestionIndex);
+        loadQuestion(StartActivity.currentQuestionIndex);
 
         // 各ボタンにリスナーを設定
         optionA.setOnClickListener(new View.OnClickListener() {
@@ -86,17 +84,17 @@ public class MainActivity extends AppCompatActivity {
 
     // ユーザーが選択した答えをチェックするメソッド
     private void checkAnswer(String selectedOption) {
-        Question currentQuestion = questionStorage.getQuestion(currentQuestionIndex);
+        Question currentQuestion = questionStorage.getQuestion(StartActivity.currentQuestionIndex);
         String correctAnswer = currentQuestion.getCorrectAnswer();
 
         if (selectedOption.equals(correctAnswer)) {
             // 正解の場合
-            score = score + 1;
+            StartActivity.score = StartActivity.score + 1;
             Toast.makeText(MainActivity.this, "正解！", Toast.LENGTH_SHORT).show();
 
             // 正解画面を表示
             Intent intent = new Intent(MainActivity.this, collectActivity.class);
-            intent.putExtra("currentIndex", currentQuestionIndex + 1);  // 次の問題のインデックスを渡す
+            intent.putExtra("currentIndex", StartActivity.currentQuestionIndex + 1);  // 次の問題のインデックスを渡す
             startActivity(intent);
 
         } else {
@@ -105,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
 
             // 不正解画面を表示
             Intent intent = new Intent(MainActivity.this, discollectActivity.class);
-            intent.putExtra("currentIndex", currentQuestionIndex + 1);  // 次の問題のインデックスを渡す
+            intent.putExtra("currentIndex", StartActivity.currentQuestionIndex + 1);  // 次の問題のインデックスを渡す
             startActivity(intent);
         }
     }
@@ -129,6 +127,6 @@ public class MainActivity extends AppCompatActivity {
     // 結果を表示するメソッド
     private void showResult() {
         // すべての問題が終わった時に結果を表示
-        Toast.makeText(MainActivity.this, "クイズ終了！あなたのスコアは: " + score + "/10", Toast.LENGTH_LONG).show();
+        Toast.makeText(MainActivity.this, "クイズ終了！あなたのスコアは: " + StartActivity.score + "/10", Toast.LENGTH_LONG).show();
     }
 }
