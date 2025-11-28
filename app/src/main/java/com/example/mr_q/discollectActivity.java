@@ -44,7 +44,7 @@ public class discollectActivity extends AppCompatActivity {
 
             // ★ 10 に達したら ResultActivity へ
             if (StartActivity.currentQuestionIndex == 10) {
-                intent = new Intent(discollectActivity.this, ResultActivity.class);
+                intent = new Intent(discollectActivity.this, result2Activity.class);
             } else {
                 // ★ 10 未満は MainActivity に戻る
                 intent = new Intent(discollectActivity.this, MainActivity.class);
