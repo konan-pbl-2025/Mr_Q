@@ -12,6 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Mr_Q"
         tools:targetApi="31">
+        <activity android:name=".collect_sound"
+            android:exported="true"  android:label="@string/app_name"/>
         <activity
             android:name=".discollectActivity"
             android:exported="false" />
