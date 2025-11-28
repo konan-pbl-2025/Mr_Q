@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         optionD = findViewById(R.id.optionD);
 
         // 最初の問題を表示
-        loadQuestion(StartActivity.currentQuestionIndex);
+        loadQuestion();
 
         // 各ボタンにリスナーを設定
         optionA.setOnClickListener(new View.OnClickListener() {
@@ -64,10 +64,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // クイズの問題データを設定するメソッド
-    private void loadQuestion(int index) {
-        if (index < 10) { // 10問だけ出題
+    private void loadQuestion() {
+        if (StartActivity.currentQuestionIndex < 10) { // 10問だけ出題
             // 現在の問題を取得
-            Question currentQuestion = questionStorage.getQuestion(index);
+            Question currentQuestion = questionStorage.getQuestion();
 
             // 問題文をセット
             questionText.setText(currentQuestion.getQuestionText());
@@ -84,17 +84,16 @@ public class MainActivity extends AppCompatActivity {
 
     // ユーザーが選択した答えをチェックするメソッド
     private void checkAnswer(String selectedOption) {
-        Question currentQuestion = questionStorage.getQuestion(StartActivity.currentQuestionIndex);
+        Question currentQuestion = questionStorage.getQuestion();
         String correctAnswer = currentQuestion.getCorrectAnswer();
 
         if (selectedOption.equals(correctAnswer)) {
             // 正解の場合
-            StartActivity.score = StartActivity.score + 1;
+            StartActivity.score++;
             Toast.makeText(MainActivity.this, "正解！", Toast.LENGTH_SHORT).show();
 
             // 正解画面を表示
             Intent intent = new Intent(MainActivity.this, collectActivity.class);
-            intent.putExtra("currentIndex", StartActivity.currentQuestionIndex + 1);  // 次の問題のインデックスを渡す
             startActivity(intent);
 
         } else {
@@ -103,7 +102,6 @@ public class MainActivity extends AppCompatActivity {
 
             // 不正解画面を表示
             Intent intent = new Intent(MainActivity.this, discollectActivity.class);
-            intent.putExtra("currentIndex", StartActivity.currentQuestionIndex + 1);  // 次の問題のインデックスを渡す
             startActivity(intent);
         }
     }

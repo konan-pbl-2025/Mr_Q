@@ -18,22 +18,19 @@ public class discollectActivity extends AppCompatActivity {
         Button nextButton = findViewById(R.id.discollectNext);
         TextView discollctEXP = findViewById(R.id.discollectEXP);
 
-        // MainActivityからインデックスを受け取る
-        final int currentIndex = getIntent().getIntExtra("currentIndex", 0);
 
-        discollctEXP.setText(MainActivity.questionStorage.getQuestion(currentIndex - 1).getQuestionExp());
+        discollctEXP.setText(MainActivity.questionStorage.getQuestion().getQuestionExp());
 
         nextButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // インデックスを1増やして次の問題に進む
-                if (currentIndex < 10) {
+                StartActivity.currentQuestionIndex++;  // 次の問題のインデックスを渡す
+                if (StartActivity.currentQuestionIndex < 10) {
                     Intent intent = new Intent(discollectActivity.this, MainActivity.class);
-                    intent.putExtra("currentIndex", currentIndex);  // ここではインデックスをそのまま渡す
                     startActivity(intent);
                 }
-                else if(currentIndex >= 10) {
+                else if(StartActivity.currentQuestionIndex >= 10) {
                     Intent intent = new Intent(discollectActivity.this, ResultActivity.class);
-                    intent.putExtra("currentIndex", currentIndex);  // ここではインデックスをそのまま渡す
                     startActivity(intent);
                 }
             }
