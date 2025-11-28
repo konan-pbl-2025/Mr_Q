@@ -30,7 +30,7 @@ public class collectActivity extends AppCompatActivity {
                     startActivity(intent);
                 }
                 else if(StartActivity.currentQuestionIndex >= 10) {
-                    Intent intent = new Intent(collectActivity.this, ResultActivity.class);
+                    Intent intent = new Intent(collectActivity.this, result2Activity.class);
                     startActivity(intent);
                 }
             }

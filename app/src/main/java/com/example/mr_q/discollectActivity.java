@@ -30,7 +30,7 @@ public class discollectActivity extends AppCompatActivity {
                     startActivity(intent);
                 }
                 else if(StartActivity.currentQuestionIndex >= 10) {
-                    Intent intent = new Intent(discollectActivity.this, ResultActivity.class);
+                    Intent intent = new Intent(discollectActivity.this, result2Activity.class);
                     startActivity(intent);
                 }
             }
