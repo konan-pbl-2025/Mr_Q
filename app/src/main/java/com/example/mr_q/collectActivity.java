@@ -2,7 +2,6 @@ package com.example.mr_q;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.media.MediaPlayer;
@@ -42,20 +41,25 @@ public class collectActivity extends AppCompatActivity {
         }
 
 
-            nextButton.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View v) {
-                    // インデックスを1増やして次の問題に進む
-                    if (currentIndex < 10) {
-                        Intent intent = new Intent(collectActivity.this, MainActivity.class);
-                        intent.putExtra("currentIndex", currentIndex);  // ここではインデックスをそのまま渡す
-                        startActivity(intent);
-                    } else if (currentIndex >= 10) {
-                        Intent intent = new Intent(collectActivity.this, ResultActivity.class);
-                        intent.putExtra("currentIndex", currentIndex);  // ここではインデックスをそのまま渡す
-                        startActivity(intent);
-                    }
-                }
-            });
+        nextButton.setOnClickListener(v -> {
+
+            // index を増やす
+            StartActivity.currentQuestionIndex++;
+
+            Intent intent;
+
+            // ★ 10 に達したら ResultActivity へ
+            if (StartActivity.currentQuestionIndex == 10) {
+                intent = new Intent(collectActivity.this, ResultActivity.class);
+            } else {
+                // ★ 10 未満は MainActivity に戻る
+                intent = new Intent(collectActivity.this, MainActivity.class);
+            }
+
+            // ★ 遷移を実行
+            startActivity(intent);
+            finish();
+        });
         }
 
         @Override
