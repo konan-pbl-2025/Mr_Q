@@ -34,10 +34,6 @@ public class collectActivity extends AppCompatActivity {
         if (mediaPlayer != null) {
             mediaPlayer.setOnCompletionListener(mp -> mp.release());
 
-            // Nextボタンの処理など、その他のコード
-            findViewById(R.id.collect_button).setOnClickListener(v -> {
-                // ... 画面遷移コードなど ...
-            });
         }
 
 
