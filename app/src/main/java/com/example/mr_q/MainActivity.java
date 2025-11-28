@@ -7,6 +7,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.StringTokenizer;
+
 public class MainActivity extends AppCompatActivity {
 
     private TextView questionText;
@@ -18,6 +20,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        TextView displayCurrentIndex = findViewById(R.id.displayCurrentIndex);
+        displayCurrentIndex.setText(String.valueOf((StartActivity.currentQuestionIndex + 1) + "問目"));
 
         // もしIntentにcurrentIndexが含まれていれば、それをセット
         StartActivity.currentQuestionIndex = getIntent().getIntExtra("currentIndex", StartActivity.currentQuestionIndex);
