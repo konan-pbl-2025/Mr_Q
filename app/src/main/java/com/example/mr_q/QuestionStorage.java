@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class QuestionStorage {
-    private List<Question> questions;
+    public static List<Question> questions;
 
     // コンストラクタ
     public QuestionStorage() {

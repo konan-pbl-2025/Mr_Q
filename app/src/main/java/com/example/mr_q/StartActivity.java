@@ -18,6 +18,8 @@ public class StartActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
 
+        MainActivity.questionStorage = new QuestionStorage(); // 問題リストを管理するインスタンス
+        
         Button StartButton = findViewById(R.id.startButton);
 
         StartButton.setOnClickListener(new View.OnClickListener() {

@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -65,21 +64,16 @@ public class MainActivity extends AppCompatActivity {
 
     // クイズの問題データを設定するメソッド
     private void loadQuestion() {
-        if (StartActivity.currentQuestionIndex < 10) { // 10問だけ出題
-            // 現在の問題を取得
-            Question currentQuestion = questionStorage.getQuestion();
+        // 現在の問題を取得
+        Question currentQuestion = questionStorage.getQuestion();
 
-            // 問題文をセット
-            questionText.setText(currentQuestion.getQuestionText());
-            // 選択肢をセット
-            optionA.setText(currentQuestion.getOptions()[0]);
-            optionB.setText(currentQuestion.getOptions()[1]);
-            optionC.setText(currentQuestion.getOptions()[2]);
-            optionD.setText(currentQuestion.getOptions()[3]);
-        } else {
-            // すべての問題が終わった場合、結果を表示
-            showResult();
-        }
+        // 問題文をセット
+        questionText.setText(currentQuestion.getQuestionText());
+        // 選択肢をセット
+        optionA.setText(currentQuestion.getOptions()[0]);
+        optionB.setText(currentQuestion.getOptions()[1]);
+        optionC.setText(currentQuestion.getOptions()[2]);
+        optionD.setText(currentQuestion.getOptions()[3]);
     }
 
     // ユーザーが選択した答えをチェックするメソッド
@@ -90,7 +84,6 @@ public class MainActivity extends AppCompatActivity {
         if (selectedOption.equals(correctAnswer)) {
             // 正解の場合
             StartActivity.score++;
-            Toast.makeText(MainActivity.this, "正解！", Toast.LENGTH_SHORT).show();
 
             // 正解画面を表示
             Intent intent = new Intent(MainActivity.this, collectActivity.class);
@@ -98,7 +91,6 @@ public class MainActivity extends AppCompatActivity {
 
         } else {
             // 不正解の場合
-            Toast.makeText(MainActivity.this, "不正解。正解は「" + currentQuestion.getOptions()[getOptionIndex(correctAnswer)] + "」です。", Toast.LENGTH_LONG).show();
 
             // 不正解画面を表示
             Intent intent = new Intent(MainActivity.this, discollectActivity.class);
@@ -120,11 +112,5 @@ public class MainActivity extends AppCompatActivity {
             default:
                 return -1;
         }
-    }
-
-    // 結果を表示するメソッド
-    private void showResult() {
-        // すべての問題が終わった時に結果を表示
-        Toast.makeText(MainActivity.this, "クイズ終了！あなたのスコアは: " + StartActivity.score + "/10", Toast.LENGTH_LONG).show();
     }
 }
