@@ -20,9 +20,7 @@ public class collectActivity extends AppCompatActivity {
 
         // 前の問題の解説（例）
         textView2.setText(
-                MainActivity.questionStorage
-                        .getQuestion(StartActivity.currentQuestionIndex)
-                        .getQuestionExp()
+                MainActivity.questionStorage.getQuestion().getQuestionExp()
         );
 
         // ★ 次のボタンを押した時の処理
