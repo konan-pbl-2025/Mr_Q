@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Mr_Q"
         tools:targetApi="31">
         <activity
+            android:name=".result2Activity"
+            android:exported="false" />
+        <activity
             android:name=".discollectActivity"
             android:exported="false" />
         <activity
