@@ -17,26 +17,33 @@ public class collectActivity extends AppCompatActivity {
 
         Button nextButton = findViewById(R.id.collect_button);
         TextView textView2 = findViewById(R.id.textView2);
-        // MainActivityからインデックスを受け取る
-        final int currentIndex = getIntent().getIntExtra("currentIndex", 0);
 
-        textView2.setText(MainActivity.questionStorage.getQuestion(currentIndex - 1).getQuestionExp());
+        // 前の問題の解説（例）
+        textView2.setText(
+                MainActivity.questionStorage
+                        .getQuestion(StartActivity.currentQuestionIndex)
+                        .getQuestionExp()
+        );
 
+        // ★ 次のボタンを押した時の処理
+        nextButton.setOnClickListener(v -> {
 
-        nextButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                // インデックスを1増やして次の問題に進む
-                if (currentIndex < 10) {
-                    Intent intent = new Intent(collectActivity.this, MainActivity.class);
-                    intent.putExtra("currentIndex", currentIndex);  // ここではインデックスをそのまま渡す
-                    startActivity(intent);
-                }
-                else if(currentIndex >= 10) {
-                    Intent intent = new Intent(collectActivity.this, ResultActivity.class);
-                    intent.putExtra("currentIndex", currentIndex);  // ここではインデックスをそのまま渡す
-                    startActivity(intent);
-                }
+            // index を増やす
+            StartActivity.currentQuestionIndex++;
+
+            Intent intent;
+
+            // ★ 10 に達したら ResultActivity へ
+            if (StartActivity.currentQuestionIndex == 10) {
+                intent = new Intent(collectActivity.this, ResultActivity.class);
+            } else {
+                // ★ 10 未満は MainActivity に戻る
+                intent = new Intent(collectActivity.this, MainActivity.class);
             }
+
+            // ★ 遷移を実行
+            startActivity(intent);
+            finish();
         });
     }
 }
