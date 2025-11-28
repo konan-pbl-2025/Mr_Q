@@ -20,10 +20,8 @@ public class collectActivity extends AppCompatActivity {
 
         Button nextButton = findViewById(R.id.collect_button);
         TextView textView2 = findViewById(R.id.textView2);
-        // MainActivityからインデックスを受け取る
-        final int currentIndex = getIntent().getIntExtra("currentIndex", 0);
 
-        textView2.setText(MainActivity.questionStorage.getQuestion(currentIndex - 1).getQuestionExp());
+        textView2.setText(MainActivity.questionStorage.getQuestion().getQuestionExp());
 
         // 1. MediaPlayerを初期化し、音源をロードする
         MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.correct_sound); // ★R.raw.correct_sound はres/rawフォルダのファイル名

@@ -107,6 +107,12 @@ public class QuestionStorage {
                 "D",
                 "日本の県の中では長野県が一番大きいです。"
         ));
+        questions.add(new Question(
+                "昭和の次の元号は？",
+                new String[]{"平成", "令和", "大正", "元禄"},
+                "A",
+                "昭和の次は平成です。"
+        ));
 
 
 
@@ -120,9 +126,9 @@ public class QuestionStorage {
     }
 
     // 指定したインデックスの問題を取得
-    public Question getQuestion(int index) {
-        if (index >= 0 && index < 10) {  // 10問だけを出題
-            return questions.get(index);
+    public Question getQuestion() {
+        if (StartActivity.currentQuestionIndex >= 0 && StartActivity.currentQuestionIndex < 10) {  // 10問だけを出題
+            return questions.get(StartActivity.currentQuestionIndex);
         }
         return null;
     }
